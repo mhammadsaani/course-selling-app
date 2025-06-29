@@ -86,7 +86,7 @@ adminRoute.put('/course/:id', async function(req, res){
     const { title, description, price, imageUrl } = req.body
 
     try {
-        await CourseModel.findOneAndUpdate({_id: req.params.id} , {
+        await CourseModel.findOneAndUpdate({_id: req.params.id, creatorId: adminId} , {
             title, 
             description,
             price,
